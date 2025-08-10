@@ -1,0 +1,153 @@
+
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-card.featured .pricing-header {
+  background-color: #5ecf84;
+  color: #fff;
+}
+
+.pricing-header {
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.pricing-price {
+  font-size: 1.8rem;
+  padding: 20px 10px 10px;
+}
+
+.currency {
+  font-size: 1rem;
+  vertical-align: super;
+}
+
+.per {
+  font-size: 0.9rem;
+  color: #999;
+  margin-left: 4px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.pricing-features li {
+  padding: 8px 0;
+  color: #333;
+}
+
+.pricing-features .disabled {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.pricing-footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.buy-button {
+  background-color: #5ecf84;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+  background-color: #4abc6b;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  background-color: #5ecf84;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 5px 50px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* === Scroll Up Animation on Page Load === */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  /* 🔥 Animation on page load */
+  animation: scrollUp 0.8s ease-out forwards;
+}
+/* Mobile Responsive for Pricing Section */
+
+@media (max-width: 992px) {
+  .pricing-card {
+    width: 45%; /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-card {
+    width: 100%; /* Full width cards on small screens */
+  }
+
+  .pricing-header {
+    font-size: 1.1rem;
+    padding: 15px 10px;
+  }
+
+  .pricing-price {
+    font-size: 1.5rem;
+    padding: 15px 10px 8px;
+  }
+
+  .pricing-features li {
+    font-size: 0.9rem;
+  }
+
+  .buy-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+

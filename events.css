@@ -1,0 +1,99 @@
+
+.card-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* Animation on load */
+  animation: scrollUp 1s ease-out;
+  transform: translateY(50px); /* initial position (down) */
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Keyframes for upward animation */
+@keyframes scrollUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.event-card {
+  background-color: #fff;
+  width: 360px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease-out;
+  cursor: pointer;
+}
+
+.card-img:active {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.event-date {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.event-desc {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+/* Mobile Responsive for Events Page */
+
+@media (max-width: 992px) {
+  .card-container {
+    gap: 30px;
+  }
+
+  .event-card {
+    width: 45%; /* two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    gap: 20px;
+  }
+
+  .event-card {
+    width: 100%; /* single card per row on small screens */
+  }
+
+  .card-content h3 {
+    font-size: 1.1em;
+  }
+
+  .event-date {
+    font-size: 0.9em;
+  }
+
+  .event-desc {
+    font-size: 0.9em;
+  }
+}
+

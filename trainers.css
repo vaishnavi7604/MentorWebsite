@@ -1,0 +1,160 @@
+/* Trainers Section */
+.section.trainers {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  justify-content: center;
+}
+
+.member {
+  flex: 1 1 calc(33.333% - 40px);
+  max-width: 320px;
+  text-align: center;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.member:nth-child(1) { animation-delay: 0.1s; }
+.member:nth-child(2) { animation-delay: 0.2s; }
+.member:nth-child(3) { animation-delay: 0.3s; }
+.member:nth-child(4) { animation-delay: 0.4s; }
+.member:nth-child(5) { animation-delay: 0.5s; }
+.member:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+/* Image and Hover Icons */
+.member-img {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 20px auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Social icons hidden by default */
+.member-img .social {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+/* Show icons on image hover */
+.member-img:hover .social {
+  opacity: 1;
+}
+
+.member-img .social a {
+  color: #fff;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.member-img .social a:hover {
+  transform: scale(1.2);
+  color: #0d6efd;
+}
+
+/* Member Info */
+.member-info h4 {
+  font-size: 18px;
+  margin: 10px 0 4px;
+}
+
+.member-info span {
+  font-style: italic;
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.member-info p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px;
+}
+/* Responsive styles for Trainers page */
+@media (max-width: 992px) {
+  .member {
+    flex: 1 1 calc(50% - 30px); /* Two columns on tablets */
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    gap: 30px 15px;
+  }
+
+  .member {
+    flex: 1 1 100%; /* Single column on mobile */
+    max-width: none;
+  }
+
+  .member-img {
+    width: 140px;
+    height: 140px;
+    margin: 15px auto 8px;
+  }
+
+  .member-info h4 {
+    font-size: 16px;
+  }
+
+  .member-info p {
+    font-size: 13px;
+    padding: 0 5px;
+  }
+
+  .member-img .social a {
+    font-size: 16px;
+  }
+}
+
+/* Optional: reduce gap on very small screens */
+@media (max-width: 400px) {
+  .row {
+    gap: 20px 10px;
+  }
+
+  .member-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
